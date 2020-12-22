@@ -2,13 +2,13 @@
 var tableData = data;
 
 // YOUR CODE HERE!
-// Set reference to table body
+// Create reference to table body
 var tbody = d3.select("tbody");
 
 // UFO Sighting values for each column
 tableData.forEach(function(ufoSighting) {
     console.log(ufoSighting);
-    // Append one table row 'tr' for each UFO Sighting object
+    // Append a new table row for each UFO Sighting object
     var row = tbody.append("tr");
 
     // Use 'Object.entries' to console.log each UFO Sighting value
@@ -32,7 +32,7 @@ button.on("click", function() {
     var inputValue = inputElement.property("value");
     // console.log input value
     console.log(inputValue);
-    // Filter data with datetime equal to input value
+    // Filter data with datetime equal to user input
     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
     // console.log filter values
     console.log(filteredData);
@@ -40,12 +40,12 @@ button.on("click", function() {
     filteredData.forEach(function(selections) {
 
         console.log(selections);
-        // Append one table row `tr` for each UFO Sighting object
+        // Append a new table row for each UFO Sighting object
         var row = tbody.append("tr");
         // Use `Object.entries` to console.log each UFO Sighting value
         Object.entries(selections).forEach(function([key, value]) {
             console.log(key, value);
-            // Append a cell to the row for each value
+            // Append cell to the row for each value
             var cell = row.append("td");
             cell.text(value);
         });
